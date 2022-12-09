@@ -33,7 +33,7 @@
     text-align: center;
     padding: 3%;
     background: pink;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),
                 0 6px 20px 0 rgba(0,0,0,0.36);
   }
@@ -69,15 +69,15 @@
           {{i.description}}
           <br />
           <br />
-          <form action="/del/{{i.id}}" method="POST" style=" padding-right: 4%; padding-bottom: 3%;">
+          <form action="/del/{{i.id}}" method="POST" style=" padding-right: 2%; padding-bottom: 2%;">
             {% csrf_token %}
-            <button value="remove" type="submit"  class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span> &nbsp; remove</button>
+            <button value="remove" type="submit"  class="btn btn-danger" style="float: right;"><span class="glyphicon glyphicon-trash"></span> &nbsp; remove</button>
           </form>
         </div>
         {% endfor%}
       </div>
       <div class="col-md-1"> </div>
-      <div class="col-md-3" >
+      <div class="col-md-4" >
         <div  class="submit_form">
         <form  method="POST">
           {% csrf_token %}

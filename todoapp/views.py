@@ -28,3 +28,12 @@ def remove(request, id):
 	item.delete()
 	messages.info(request, "Task Removed !!!")
 	return redirect ('todo')
+
+def update(request, id):
+	item = Task.objects.get(id=id)
+	form= TodoForm(instance=item)
+	if request.method == "POST":
+		form = TodoForm(request.POST,instance=item)
+		if form.is_valid():
+			form.save()
+			return redirect('todo')
